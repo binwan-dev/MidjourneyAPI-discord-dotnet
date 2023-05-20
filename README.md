@@ -6,9 +6,9 @@ midjourney api by discord
 
 1. download `MidjourneyAPI` package
 
-``` bash
-dotnet add package MidjourneyAPI --version 1.0.0-beta.2305181719
-```
+   ```bash
+   dotnet add package MidjourneyAPI --version 1.0.0-beta.2305181719
+   ```
 
 2. Reference to [Example]()
 
@@ -18,9 +18,20 @@ dotnet add package MidjourneyAPI --version 1.0.0-beta.2305181719
 
 1. git clone `https://github.com/binwan-dev/MidjourneyAPI`
 
+2. config `SalaiToken` `ServerId` `ChannelId` at `Program.cs` in `src/example/MidjourneyAPI.Example`
+
+   ```csharp Program.cs
+   service.AddOptions<MidjourneyOption>().Configure(o => 
+   {
+       o.SalaiToken = "<your discord authorization value>";
+       o.ServerId = "<your discord server id>";
+       o.ChannelId = "<your midjourney bot channelId in discord>";
+   });
+   ```
+
 2. run `example`
 
-``` bash
-cd MidjourneyAPI/src/example/MidjourneyAPI.Example
-dotnet run 
-```
+   ``` shell
+   cd MidjourneyAPI/src/example/MidjourneyAPI.Example
+   dotnet run 
+   ```
