@@ -11,7 +11,7 @@ services.AddLogging(builder =>
 });
 services.AddMidjourney(builder =>
 {
-    builder.Option.SalaiToken = "<your discord authorization value>";
+    builder.Option.DiscordToken = "<your discord authorization value>";
     builder.Option.ChannelId = "<your discord server id>";
     builder.Option.ServerId = "<your midjourney bot channelId in discord>";
 });

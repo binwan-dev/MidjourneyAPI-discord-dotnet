@@ -4,7 +4,7 @@ public class DiscordOption
 {
     private static DiscordOption _defaultOptions = new();
     
-    public string SalaiToken { get; set; } = string.Empty;
+    public string DiscordToken { get; set; } = string.Empty;
     
     public string ServerId { get; set; } = string.Empty;
 
@@ -12,9 +12,9 @@ public class DiscordOption
 
     public void SetOption(DiscordOption newOption)
     {
-        if (_defaultOptions.SalaiToken != newOption.SalaiToken)
+        if (_defaultOptions.DiscordToken != newOption.DiscordToken)
         {
-            SalaiToken = newOption.SalaiToken;
+            DiscordToken = newOption.DiscordToken;
         }
 
         if (_defaultOptions.ServerId != newOption.ServerId)
@@ -30,19 +30,19 @@ public class DiscordOption
 
     public virtual void CheckConfig()
     {
-        if(string.IsNullOrWhiteSpace(SalaiToken))
+        if(string.IsNullOrWhiteSpace(DiscordToken))
         {
-            throw new ArgumentNullException(nameof(SalaiToken));
+            throw new ArgumentNullException(nameof(DiscordToken));
         }
 
         if(string.IsNullOrWhiteSpace(ServerId))
         {
-            throw new ArgumentNullException(nameof(SalaiToken));
+            throw new ArgumentNullException(nameof(DiscordToken));
         }
         
         if(string.IsNullOrWhiteSpace(ChannelId))
         {
-            throw new ArgumentNullException(nameof(SalaiToken));
+            throw new ArgumentNullException(nameof(DiscordToken));
         }
     }
 }

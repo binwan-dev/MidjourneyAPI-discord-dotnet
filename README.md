@@ -9,6 +9,7 @@ midjourney api by discord
 - [ ] Select
 
 ## Use for Binary
+
 wait pr
 
 ## Use for dotnet
@@ -35,7 +36,7 @@ wait pr
    services.AddMidjourney(builder =>
    {
        // Note: Please set your custome info.
-       builder.Option.SalaiToken = "<your discord authorization value>";
+       builder.Option.DiscordToken = "<your discord authorization value>";
        builder.Option.ChannelId = "<your discord server id>";
        builder.Option.ServerId = "<your midjourney bot channelId in discord>";
    });
@@ -56,9 +57,35 @@ wait pr
 
 3. Run your code for `dotnet run`
 
+### How to get `DiscordToken` `ServerId` `ChannelId`
+1. Get `DiscordToken`
+
+   [How to get DiscordToken](https://www.androidauthority.com/get-discord-token-3149920/)
+
+
+2. Get `ServerId`
+
+   Press `F12`, Open your discord `Server profile`, Find `/profile` for `Networking` and view `payload`, select `guild_id` in `mutual_guilds`
+
+
+3. Get `ChannelId`
+
+   Press `F12`, Select click your channel in discord, Find `/messages` for `Networking` and view `payload`, select `channel_id` in data list
+
 ## Example
 
 1. git clone `https://github.com/binwan-dev/MidjourneyAPI`
+
+2. config `SalaiToken` `ServerId` `ChannelId` at `Program.cs` in `src/example/MidjourneyAPI.Example`
+
+   ```csharp Program.cs
+   service.AddOptions<MidjourneyOption>().Configure(o => 
+   {
+       o.SalaiToken = "<your discord authorization value>";
+       o.ServerId = "<your discord server id>";
+       o.ChannelId = "<your midjourney bot channelId in discord>";
+   });
+   ```
 
 2. run `example`
 

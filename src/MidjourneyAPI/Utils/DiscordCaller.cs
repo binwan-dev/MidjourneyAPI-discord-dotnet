@@ -18,7 +18,7 @@ public class DiscordCaller:IDisposable
     public async Task<int> InteractionsAsync<T>(DiscordRequest<T> request, DiscordOption option) where T: class
     {
         var requestMessage = new HttpRequestMessage(HttpMethod.Post, _interactionsUrl);
-        requestMessage.Headers.TryAddWithoutValidation("Authorization", option.SalaiToken);
+        requestMessage.Headers.TryAddWithoutValidation("Authorization", option.DiscordToken);
         var content = new StringContent(JsonConvert.SerializeObject(request));
         content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
         requestMessage.Content = content;
@@ -38,7 +38,7 @@ public class DiscordCaller:IDisposable
     {
         var url = _retrieveMessageUrl.Replace("CHANNELID", option.ChannelId).Replace("LIMIT", limit.ToString());
         var requestMessage = new HttpRequestMessage(HttpMethod.Get, new Uri(url));
-        requestMessage.Headers.TryAddWithoutValidation("Authorization", option.SalaiToken);
+        requestMessage.Headers.TryAddWithoutValidation("Authorization", option.DiscordToken);
         
         var response = await _httpClient.SendAsync(requestMessage);
         if (!response.IsSuccessStatusCode)

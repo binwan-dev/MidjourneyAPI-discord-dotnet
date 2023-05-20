@@ -16,7 +16,7 @@ public class MidjourneyTest
         {
             o.ServerId = "serverId";
             o.ChannelId = "channelId";
-            o.SalaiToken = "token";
+            o.DiscordToken = "token";
         });
         service.AddSingleton<DiscordCaller>();
         service.AddSingleton<Midjourney>();

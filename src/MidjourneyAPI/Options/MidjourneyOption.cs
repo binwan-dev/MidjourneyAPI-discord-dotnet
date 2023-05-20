@@ -30,7 +30,7 @@ public class MidjourneyOption : DiscordOption
         option.Limit = Limit;
         option.ServerId = ServerId;
         option.ChannelId = ChannelId;
-        option.SalaiToken = SalaiToken;
+        option.DiscordToken = DiscordToken;
         return option;
     }
 }

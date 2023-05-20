@@ -37,7 +37,7 @@ public class Midjourney
         request.Data.Options.First().Value = prompt;
         request.GuildId = option.ServerId;
         request.ChannelId = option.ChannelId;
-        request.SessionId = option.SalaiToken;
+        request.SessionId = option.DiscordToken;
         var responseStatusCode = await _discordCaller.InteractionsAsync(request, option);
         if (responseStatusCode != 204)
         {
