@@ -31,7 +31,7 @@ public class Midjourney
             prompt += $" --seed {new Random().Next(1000, 9999)}";
         }
 
-        _log.LogInformation($"imagine -> prompt");
+        _log.LogInformation($"imagine -> {prompt}");
         var request = new DiscordRequest<MidjourneyImagineRequest>();
         request.Data = new MidjourneyImagineRequest();
         request.Data.Options.First().Value = prompt;

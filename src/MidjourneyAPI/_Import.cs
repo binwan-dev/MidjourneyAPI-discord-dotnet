@@ -1,7 +1,9 @@
 global using Microsoft.Extensions.Options;
 global using Microsoft.Extensions.Logging;
+global using MidjourneyAPI;
 global using MidjourneyAPI.Dtos;
 global using MidjourneyAPI.Options;
+global using MidjourneyAPI.Utils;
 global using Newtonsoft.Json;
 global using System;
 global using System.Net;

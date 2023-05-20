@@ -1,6 +1,6 @@
 namespace MidjourneyAPI.Options;
 
-public class MidjourneyOption:DiscordOption
+public class MidjourneyOption : DiscordOption
 {
     private static MidjourneyOption _defaultOption = new MidjourneyOption(); 
     

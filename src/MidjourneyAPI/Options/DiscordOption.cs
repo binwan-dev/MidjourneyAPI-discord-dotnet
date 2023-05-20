@@ -27,4 +27,22 @@ public class DiscordOption
             ChannelId = newOption.ChannelId;
         }
     }
+
+    public virtual void CheckConfig()
+    {
+        if(string.IsNullOrWhiteSpace(SalaiToken))
+        {
+            throw new ArgumentNullException(nameof(SalaiToken));
+        }
+
+        if(string.IsNullOrWhiteSpace(ServerId))
+        {
+            throw new ArgumentNullException(nameof(SalaiToken));
+        }
+        
+        if(string.IsNullOrWhiteSpace(ChannelId))
+        {
+            throw new ArgumentNullException(nameof(SalaiToken));
+        }
+    }
 }
