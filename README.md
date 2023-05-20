@@ -78,21 +78,21 @@ wait pr
 
 2. config `SalaiToken` `ServerId` `ChannelId` at `Program.cs` in `src/example/MidjourneyAPI.Example`
 
-   ```csharp Program.cs
-   service.AddOptions<MidjourneyOption>().Configure(o => 
+   ```c#
+   services.AddMidjourney(builder =>
    {
-       o.SalaiToken = "<your discord authorization value>";
-       o.ServerId = "<your discord server id>";
-       o.ChannelId = "<your midjourney bot channelId in discord>";
+       builder.Option.DiscordToken = "<your discord authorization value>";
+       builder.Option.ChannelId = "<your discord server id>";
+       builder.Option.ServerId = "<your midjourney bot channelId in discord>";
    });
    ```
 
 2. run `example`
 
-``` bash
-cd MidjourneyAPI/src/example/MidjourneyAPI.Example.Console
-dotnet run 
-```
+   ``` shell
+   cd MidjourneyAPI/src/example/MidjourneyAPI.Example.Console
+   dotnet run 
+   ```
 
 ## Thanks
 
