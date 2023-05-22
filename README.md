@@ -97,3 +97,6 @@ wait pr
 ## Thanks
 
 [https://github.com/erictik/midjourney-api](https://github.com/erictik/midjourney-api)
+
+## Tips
+   The project is to be used for educational purposes only
