@@ -27,6 +27,6 @@ public class MidjourneyTest
             Console.WriteLine(msg.Progress);
             return Task.CompletedTask;
         };
-        var result = midjourney.ImagineAsync("dogs",loading:loading).Result;
+        var result = midjourney.ImagineAsync("http://mmbiz.qpic.cn/mmbiz_jpg/WAYSdUKc8u6qsjXbBqWaVbdv8ZDjlTiaRuMar7dyTAXCYM5HodW3Zv1wonbXLHxVDxkIicFcTwFGjJQ0IhvNRX9w/0 Tech-inspired, nutritionally healthy, and featuring a blue color scheme product poster.",loading:loading).Result;
     }
 }

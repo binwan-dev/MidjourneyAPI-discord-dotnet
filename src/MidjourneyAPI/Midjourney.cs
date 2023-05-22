@@ -89,9 +89,17 @@ public class Midjourney
 
     private async Task<MidjourneyMessageDto?> FilterDiscordMessageAsync(string prompt,List<DiscordMessageDto> discordMessages,string? options=null, string index="", Func<MidjourneyMessageDto,Task>? loading=null)
     {
+        var noUrlPrompt = prompt;
+        if (prompt.StartsWith("http://") || prompt.StartsWith("https://"))
+        {
+            var url = prompt.Split(' ')[0];
+            noUrlPrompt = prompt.Replace(url, "");
+        }
+        
         foreach (var msg in discordMessages)
         {
-            if (msg.Author.Id != "936929561302675456" || !msg.Content.Contains(prompt))
+            
+            if (msg.Author.Id != "936929561302675456" || !msg.Content.Contains(noUrlPrompt))
             {
                 continue;
             }
